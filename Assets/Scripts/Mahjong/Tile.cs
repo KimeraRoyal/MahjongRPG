@@ -1,33 +1,22 @@
-using System;
+using Mahjong;
+using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Events;
 
-namespace Mahjong
+public class Tile : MonoBehaviour
 {
-    [Serializable]
-    public class Tile
+    [ShowInInspector] [ReadOnly] private TileData m_data;
+
+    public TileData Data
     {
-        private int m_id;
-
-        [SerializeField] private string m_name;
-        [SerializeField] private TileType m_type;
-        [SerializeField] private int m_value;
-
-        public int ID => m_id;
-
-        public string Name => m_name;
-        public TileType Type => m_type;
-        public int Value => m_value;
-        
-        public Tile(int _id, TileType _type, int _value)
+        get => m_data;
+        set
         {
-            m_id = _id;
-
-            m_name = $"{_type} {_value}";
-            m_type = _type;
-            m_value = _value;
+            if(m_data == value) { return; }
+            m_data = value;
+            OnDataAssigned?.Invoke(m_data);
         }
-
-        public bool IsTerminal()
-            => m_type.IsSuited() && m_value is 1 or 9;
     }
+
+    public UnityEvent<TileData> OnDataAssigned;
 }

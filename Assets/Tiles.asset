@@ -13,105 +13,139 @@ MonoBehaviour:
   m_Name: Tiles
   m_EditorClassIdentifier: 
   m_tiles:
-  - m_name: Liman
+  - m_id: 0
+    m_name: Liman
     m_type: 0
     m_value: 0
-  - m_name: Ryanman
+  - m_id: 1
+    m_name: Ryanman
     m_type: 0
     m_value: 1
-  - m_name: Sanman
+  - m_id: 2
+    m_name: Sanman
     m_type: 0
     m_value: 2
-  - m_name: Suuman
+  - m_id: 3
+    m_name: Suuman
     m_type: 0
     m_value: 3
-  - m_name: Uuman
+  - m_id: 4
+    m_name: Uuman
     m_type: 0
     m_value: 4
-  - m_name: Rouman
+  - m_id: 5
+    m_name: Rouman
     m_type: 0
     m_value: 5
-  - m_name: Chiiman
+  - m_id: 6
+    m_name: Chiiman
     m_type: 0
     m_value: 6
-  - m_name: Paaman
+  - m_id: 7
+    m_name: Paaman
     m_type: 0
     m_value: 7
-  - m_name: Kyuuman
+  - m_id: 8
+    m_name: Kyuuman
     m_type: 0
     m_value: 8
-  - m_name: Lisou
+  - m_id: 9
+    m_name: Lisou
     m_type: 1
     m_value: 0
-  - m_name: Ryansou
+  - m_id: 10
+    m_name: Ryansou
     m_type: 1
     m_value: 1
-  - m_name: Sansou
+  - m_id: 11
+    m_name: Sansou
     m_type: 1
     m_value: 2
-  - m_name: Suusou
+  - m_id: 12
+    m_name: Suusou
     m_type: 1
     m_value: 3
-  - m_name: Uusou
+  - m_id: 13
+    m_name: Uusou
     m_type: 1
     m_value: 4
-  - m_name: Rousou
+  - m_id: 14
+    m_name: Rousou
     m_type: 1
     m_value: 5
-  - m_name: Chiisou
+  - m_id: 15
+    m_name: Chiisou
     m_type: 1
     m_value: 6
-  - m_name: Paasou
+  - m_id: 16
+    m_name: Paasou
     m_type: 1
     m_value: 7
-  - m_name: Kyuusou
+  - m_id: 17
+    m_name: Kyuusou
     m_type: 1
     m_value: 8
-  - m_name: Lipin
+  - m_id: 18
+    m_name: Lipin
     m_type: 2
     m_value: 0
-  - m_name: Ryanpin
+  - m_id: 19
+    m_name: Ryanpin
     m_type: 2
     m_value: 1
-  - m_name: Sanpin
+  - m_id: 20
+    m_name: Sanpin
     m_type: 2
     m_value: 2
-  - m_name: Suupin
+  - m_id: 21
+    m_name: Suupin
     m_type: 2
     m_value: 3
-  - m_name: Uupin
+  - m_id: 22
+    m_name: Uupin
     m_type: 2
     m_value: 4
-  - m_name: Roupin
+  - m_id: 23
+    m_name: Roupin
     m_type: 2
     m_value: 5
-  - m_name: Chiipin
+  - m_id: 24
+    m_name: Chiipin
     m_type: 2
     m_value: 6
-  - m_name: Paapin
+  - m_id: 25
+    m_name: Paapin
     m_type: 2
     m_value: 7
-  - m_name: Kyuupin
+  - m_id: 26
+    m_name: Kyuupin
     m_type: 2
     m_value: 8
-  - m_name: Ton
+  - m_id: 27
+    m_name: Ton
     m_type: 3
     m_value: 0
-  - m_name: Nan
+  - m_id: 28
+    m_name: Nan
     m_type: 3
     m_value: 1
-  - m_name: Shaa
+  - m_id: 29
+    m_name: Shaa
     m_type: 3
     m_value: 2
-  - m_name: Pei
+  - m_id: 30
+    m_name: Pei
     m_type: 3
     m_value: 3
-  - m_name: Haku
+  - m_id: 31
+    m_name: Haku
     m_type: 4
     m_value: 0
-  - m_name: Hatsu
+  - m_id: 32
+    m_name: Hatsu
     m_type: 4
     m_value: 1
-  - m_name: Chun
+  - m_id: 33
+    m_name: Chun
     m_type: 4
     m_value: 2
