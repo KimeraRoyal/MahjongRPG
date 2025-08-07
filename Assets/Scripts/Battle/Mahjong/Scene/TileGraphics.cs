@@ -3,10 +3,13 @@ using UnityEngine;
 
 namespace Mahjong
 {
-    [CreateAssetMenu(fileName = "Tile Faces", menuName = "Mahjong/Tile Faces")]
-    public class TileFaces : ScriptableObject
+    [CreateAssetMenu(fileName = "Tile Graphics", menuName = "Mahjong/Tile Graphics")]
+    public class TileGraphics : ScriptableObject
     {
         [SerializeField] private Texture2D[] m_faceTextures = new Texture2D[Tiles.c_tileCount];
+        [SerializeField] private Color m_backColor = Color.green;
+
+        public Color BackColor => m_backColor;
 
         public Texture2D GetFaceTexture(int _id)
         {

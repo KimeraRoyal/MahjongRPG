@@ -1,0 +1,19 @@
+{
+    "name": "Mahjong.Scene",
+    "rootNamespace": "Mahjong",
+    "references": [
+        "GUID:3990431ca9f13ca4680decab6a40f8da",
+        "GUID:2d10c5aa3b860924b85380ffcb737405",
+        "GUID:13a25966ca7b5024488ebd2bb02f6ba5",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

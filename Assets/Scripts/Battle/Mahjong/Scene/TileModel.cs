@@ -3,13 +3,13 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 
 [RequireComponent(typeof(Renderer))]
-public class TileMaterials : MonoBehaviour
+public class TileModel : MonoBehaviour
 {
     private static readonly int s_faceTextureId = Shader.PropertyToID("_BaseMap");
     private static readonly int s_backColorId = Shader.PropertyToID("_BaseColor");
     
     private Tile m_tile;
-    [SerializeField] private TileFaces m_faceTextures;
+    [SerializeField] private TileGraphics m_faceGraphics;
     
     private Renderer m_renderer;
     
@@ -53,6 +53,12 @@ public class TileMaterials : MonoBehaviour
 
     private void Update()
     {
+        var show = m_tile.CurrentZoneType != ZoneType.Deck;
+        if (m_renderer.enabled != show)
+        {
+            m_renderer.enabled = show;
+        }
+        
         if(!m_dirty) { return; }
         UpdateMaterials();
     }
@@ -72,7 +78,8 @@ public class TileMaterials : MonoBehaviour
 
     private void OnDataAssigned(TileData _data)
     {
-        m_faceTexture = m_faceTextures.GetFaceTexture(m_tile.Data.ID);
+        m_faceTexture = m_faceGraphics.GetFaceTexture(m_tile.Data.ID);
+        m_backColor = m_faceGraphics.BackColor;
         UpdateMaterials();
     }
 
