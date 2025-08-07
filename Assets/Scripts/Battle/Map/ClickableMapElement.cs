@@ -1,28 +1,28 @@
 ﻿using Coremera.Interaction.Mouse;
 using UnityEngine;
 
-namespace Mahjong
+namespace Map
 {
     [RequireComponent(typeof(ClickableObject))]
-    public class ClickableTile : MonoBehaviour
+    public class ClickableMapElement : MonoBehaviour
     {
-        private TileSelection m_selection;
+        private MapSelection m_selection;
         
-        private Tile m_tile;
+        private MapElement m_element;
         
         private ClickableObject m_clickable;
 
         private void Awake()
         {
-            m_selection = GetComponentInParent<TileSelection>();
-            
-            m_tile = GetComponentInParent<Tile>();
+            m_selection = GetComponentInParent<MapSelection>();
 
+            m_element = GetComponentInParent<MapElement>();
+            
             m_clickable = GetComponent<ClickableObject>();
             m_clickable.OnClicked.AddListener(Select);
         }
         
         private void Select()
-            => m_selection.SelectTile(m_tile);
+            => m_selection.SelectTile(m_element.Position);
     }
 }

@@ -6,7 +6,9 @@ namespace Coremera.Interaction.Mouse
     public abstract class Mouse : MonoBehaviour
     {
         [SerializeField] protected LayerMask m_targetMask;
-
+        
+        [SerializeField] private bool m_captureMouseHover;
+        
         public UnityEvent<ClickableObject> OnObjectClicked;
 
         private int m_lock;
@@ -23,7 +25,26 @@ namespace Coremera.Interaction.Mouse
 
         protected virtual void Update()
         {
-            if (Locked || !Input.GetMouseButtonDown(0)) { return; }
+            if (Locked) { return; }
+
+            CheckHover();
+            CheckClick();
+        }
+
+        private void CheckHover()
+        {
+            if (Input.mousePositionDelta.magnitude <= 0.001f) { return; }
+            
+            var hitTransform = Cast(Input.mousePosition);
+            if(!hitTransform) { return; }
+            
+            var clickableObject = hitTransform.GetComponentInParent<ClickableObject>();
+            if(!clickableObject) { return; }
+        }
+
+        private void CheckClick()
+        {
+            if (!Input.GetMouseButtonDown(0)) { return; }
 
             var mousePos = Input.mousePosition;
             Click(mousePos);

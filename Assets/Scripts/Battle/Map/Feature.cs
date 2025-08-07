@@ -4,11 +4,10 @@ using UnityEngine.Events;
 
 namespace Map
 {
-    public class Feature : MonoBehaviour
+    public class Feature : MapElement
     {
         private Map m_map;
         
-        [ShowInInspector] [ReadOnly] private Vector2Int m_position;
         [SerializeField] private Vector2Int m_size = Vector2Int.one;
         
         public Map Map
@@ -22,8 +21,6 @@ namespace Map
             }
         }
 
-        public Vector2Int Position => m_position;
-
         public UnityEvent<Map> OnMapAssigned;
         
         public UnityEvent<Vector2Int, Vector2Int> OnMove;
@@ -31,18 +28,17 @@ namespace Map
 
         public bool MoveTo(Vector2Int _position, bool _instant = false)
         {
-            if (!m_map.MoveFeature(this, _position)) { return false; }
-
-            var startPosition = m_position;
-            m_position = _position;
+            var startPosition = Position;
+            if (!m_map.MoveFeature(this, startPosition, _position)) { return false; }
+            Position = _position;
             
             if (_instant)
             {
-                OnMoveInstant?.Invoke(m_position);
+                OnMoveInstant?.Invoke(Position);
             }
             else
             {
-                OnMove?.Invoke(startPosition, m_position);
+                OnMove?.Invoke(startPosition, Position);
             }
             return true;
         }

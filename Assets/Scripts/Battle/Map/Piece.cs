@@ -40,7 +40,7 @@ public class Piece : Feature
 
         void MoveToTile(Vector2Int _position)
         {
-            if (Map.HasFeatureAt(_position))
+            if (Map.HasFeatureAt(_position) && Map.GetFeatureAt(_position) != this)
             {
                 skippedOccupiedTile = true;
                 return;

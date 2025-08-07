@@ -1,7 +1,7 @@
 {
     "name": "Map",
     "rootNamespace": "Map",
-    "references": ["GUID:f203267aea4dccd41981d45c3d0cccaf"],
+    "references": ["GUID:f203267aea4dccd41981d45c3d0cccaf","GUID:2d10c5aa3b860924b85380ffcb737405"],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
